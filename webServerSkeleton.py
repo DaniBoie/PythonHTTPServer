@@ -31,14 +31,14 @@ while True:
         
         # Send one HTTP header line into socket
         #Fill in start     
-        connectionSocket.send(b"HTTP/1.1 200 OK\r\n")
+        connectionSocket.send(b"HTTP/1.1 200 OK")
 
         if (filename.endswith(".jpg")):
             print("JPG SENDING!")
-            connectionSocket.send(b"Content-type: image/jpeg\r\n")
+            connectionSocket.send(b"\r\nContent-type: image/jpeg")
         elif (filename.endswith(".gif")):
             print("GIF SENDING!")
-            connectionSocket.send(b"Content-type: image/gif\r\n")
+            connectionSocket.send(b"\r\nContent-type: image/gif")
             
         
         connectionSocket.send(b"\r\n\r\n")
